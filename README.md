@@ -1,10 +1,14 @@
 # Hello and welcome to my
 
-        React,
-        Graphql,
-        Apollo,
-        Heroku,
-        Tachyons
+## React,
+
+## Graphql,
+
+## Apollo,
+
+## Heroku,
+
+## Tachyons
 
 # TODO APP
 
