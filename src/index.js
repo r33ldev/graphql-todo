@@ -6,8 +6,9 @@ import App from './app';
 const client = new ApolloClient({
   headers: {
     contentType: 'application/json',
-    'x-hasura-admin-secret':
-      'put your hasura admin secret here 😎  ',
+
+    'x-hasura-admin-secret': process.env.REACT_APP_HASURA_ADMIN_KEY,
+    // 'put your hasura admin secret here 😎  ',
   },
   uri: 'https://reactjs-graphql-todo.hasura.app/v1/graphql',
   cache: new InMemoryCache(),
