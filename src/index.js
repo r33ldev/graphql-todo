@@ -7,7 +7,7 @@ const client = new ApolloClient({
   headers: {
     contentType: 'application/json',
     'x-hasura-admin-secret':
-      'mnneKhGbtKepu1h2Qw8rPqgZa8bQmcV07YEKIoPIXy0o1c4bn5AJbyYvD4GUodU4',
+      'put your hasura admin secret here 😎  ',
   },
   uri: 'https://reactjs-graphql-todo.hasura.app/v1/graphql',
   cache: new InMemoryCache(),
