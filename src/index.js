@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+import App from './app';
 
+const client = new ApolloClient({
+  headers: {
+    contentType: 'application/json',
+    'x-hasura-admin-secret':
+      'mnneKhGbtKepu1h2Qw8rPqgZa8bQmcV07YEKIoPIXy0o1c4bn5AJbyYvD4GUodU4',
+  },
+  uri: 'https://reactjs-graphql-todo.hasura.app/v1/graphql',
+  cache: new InMemoryCache(),
+});
+
+const rootNode = document.getElementById('root');
 ReactDOM.render(
-  <React.StrictMode>
+  <ApolloProvider client={client}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </ApolloProvider>,
+  rootNode
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
