@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.facebook.co
 
 The project was inspired by Reed Barger React Course.
 
-# Edit: demo will be available at [reactjs-graphql-todo](https://reactjs-graphql-todo.herokuapp.com)
+# Edit: demo is going to be available at [reactjs-graphql-todo](https://reactjs-graphql-todo.herokuapp.com)
 
 # To edit this project,
 
