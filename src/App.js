@@ -4,7 +4,7 @@ import { gql, useQuery, useMutation } from '@apollo/client';
 const GET_TODOS = gql`
   query getTodos {
     todos(order_by: { created_at: desc }) {
-      title
+      name
       done
       id
     }
@@ -15,7 +15,7 @@ const TOGGLE_DONE = gql`
   mutation toggleDone($id: uuid!, $done: Boolean!) {
     update_todos(where: { id: { _eq: $id } }, _set: { done: $done }) {
       returning {
-        title
+        name
         done
         id
       }
@@ -24,10 +24,10 @@ const TOGGLE_DONE = gql`
 `;
 
 const ADD_TODO = gql`
-  mutation addTodo($title: String!) {
-    insert_todos(objects: { title: $title }) {
+  mutation addTodo($name: String!) {
+    insert_todos(objects: { name: $name }) {
       returning {
-        title
+        name
         done
         id
       }
@@ -39,7 +39,7 @@ const DEL_TODO = gql`
   mutation delTodo($id: uuid!) {
     delete_todos(where: { id: { _eq: $id } }) {
       returning {
-        title
+        name
         done
         id
       }
@@ -94,44 +94,44 @@ function App() {
     e.preventDefault();
     if (!newTodo.trim()) return;
     const data = await addTodo({
-      variables: { title: newTodo },
+      variables: { name: newTodo },
       refetchQueries: [{ query: GET_TODOS }],
     });
     console.log(data);
   }
 
   if (loading) {
-    return <p className="purple">Loading....</p>;
+    return <p className='purple'>Loading....</p>;
   }
   if (error) {
     return <p>Error fetching todo ....</p>;
   }
   return (
-    <div className="code vh-100 flex flex-column items-center bg-purple pa3 fl-1 white">
+    <div className='code vh-100 flex flex-column items-center bg-purple pa3 fl-1 white'>
       <h1>
         Graphql Checklist{' '}
-        <span role="img" arial-label="Checkmarks">
+        <span role='img' arial-label='Checkmarks'>
           {' '}
           ✅
         </span>
       </h1>
 
-      <form onSubmit={handleNewTodoSubmit} className="mb3">
+      <form onSubmit={handleNewTodoSubmit} className='mb3'>
         <input
-          className="pa2 f4 b--dashed"
-          type="text"
-          autoComplete="off"
+          className='pa2 f4 b--dashed'
+          type='text'
+          autoComplete='off'
           autoFocus
-          placeholder="Enter new todo"
+          placeholder='Enter new todo'
           onChange={(e) => setNewTodo(e.target.value)}
           value={newTodo}
         />
-        <button className="pa2 f4 bg-green pointer" type="submit">
+        <button className='pa2 f4 bg-green pointer' type='submit'>
           Enter
         </button>
       </form>
 
-      <div className="flex items-center  flex-column todo-content">
+      <div className='flex items-center  flex-column todo-content'>
         {data.todos.map((todo) => {
           return (
             <p
@@ -139,13 +139,12 @@ function App() {
               onDoubleClick={() => handleDoneToggle(todo)}
               className={`pa3 dim f4 pointer ${todo.done && 'strike'}`}
             >
-              {todo.title}
+              {todo.name}
               <button
-                className="pointer bg-transparent bn f4 pl3"
+                className='pointer bg-transparent bn f4 pl3'
                 onClick={() => handleDeleteTodo(todo)}
               >
-                {' '}
-                <span className="red">&times;</span>
+                <span className='red'>&times;</span>
               </button>
             </p>
           );
