@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/graphql-todo/static/js/main.816c9d5d.chunk.js",
+    "main.js.map": "/graphql-todo/static/js/main.816c9d5d.chunk.js.map",
+    "runtime-main.js": "/graphql-todo/static/js/runtime-main.2d3a4ccb.js",
+    "runtime-main.js.map": "/graphql-todo/static/js/runtime-main.2d3a4ccb.js.map",
+    "static/js/2.a1bcddc1.chunk.js": "/graphql-todo/static/js/2.a1bcddc1.chunk.js",
+    "static/js/2.a1bcddc1.chunk.js.map": "/graphql-todo/static/js/2.a1bcddc1.chunk.js.map",
+    "index.html": "/graphql-todo/index.html",
+    "static/js/2.a1bcddc1.chunk.js.LICENSE.txt": "/graphql-todo/static/js/2.a1bcddc1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d3a4ccb.js",
+    "static/js/2.a1bcddc1.chunk.js",
+    "static/js/main.816c9d5d.chunk.js"
+  ]
+}
