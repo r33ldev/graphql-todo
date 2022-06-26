@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.todo-content {
+    max-height: 600px!important;
+    overflow: auto;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.todo-content::-webkit-scrollbar {
+    width: none;
+    -ms-overflow-style: none;
+}
+
+.strike {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    text-decoration-color: red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.todo-content {
+    max-height: 600px;
+    overflow: auto;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.todo-content::-webkit-scrollbar {
+    width: none;
+    -ms-overflow-style: none;
+}
+
+.strike {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    text-decoration-color: red;
+}
