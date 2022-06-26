@@ -49,7 +49,6 @@ const DEL_TODO = gql`
 
 function App() {
   const [newTodo, setNewTodo] = React.useState('');
-
   const { data, loading, error } = useQuery(GET_TODOS);
   const [toggleTodo] = useMutation(TOGGLE_DONE);
   const [delTodo] = useMutation(DEL_TODO, {
